@@ -9,6 +9,7 @@
 .auto
 .libs
 .deps
+*.ts
 m4/
 Makefile
 Makefile.in
