@@ -81,6 +81,8 @@ typedef int vlc_bool_t;
 #define VLC_FALSE 0
 #define VLC_TRUE  1
 
+#undef HAVE_SYS_SOCKET_H
+
 typedef int64_t mtime_t;
 
 #define REPORT_PCR 0 /* report PCR arrival and values */
