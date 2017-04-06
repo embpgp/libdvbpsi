@@ -37,6 +37,9 @@
 #include <string.h>
 #include <limits.h>
 
+//don't think
+#undef HAVE_SYS_SOCKET_H
+
 #if defined(HAVE_INTTYPES_H)
 #   include <inttypes.h>
 #elif defined(HAVE_STDINT_H)
@@ -81,7 +84,7 @@
 extern int daemon(int, int);
 #endif
 
-#define FIFO_THRESHOLD_SIZE (400 * 1024 * 1024) /* threshold in bytes */
+#define FIFO_THRESHOLD_SIZE (100 * 1024 * 1024) /* threshold in bytes */
 #define ARRAY_SIZE(x) (sizeof(x) / sizeof((x)[0]))
 
 #ifdef HAVE_SYS_SOCKET_H
@@ -293,7 +296,7 @@ static void *dvbinfo_capture(void *data)
         buffer_t *buffer;
 
         if (fifo_count(capture->empty) == 0)
-            buffer = buffer_new(capture->size);
+            buffer = buffer_new(capture->size);//188
         else
             buffer = fifo_pop(capture->empty);
 

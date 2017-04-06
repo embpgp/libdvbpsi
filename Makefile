@@ -1,4 +1,5 @@
 CC = mipsel-linux-uclibc-gcc
+#CC = gcc
 
 CFLAGS = -g -lm -lpthread -g -O2 -Wall -std=gnu99 \
 -D_GNU_SOURCE -Wpointer-arith -Wcast-align -Wstrict-prototypes \

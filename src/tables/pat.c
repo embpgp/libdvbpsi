@@ -295,14 +295,14 @@ void dvbpsi_pat_sections_gather(dvbpsi_t* p_dvbpsi, dvbpsi_psi_section_t* p_sect
     }
     else
     {
-        if (p_pat_decoder->p_building_pat)
+        if (p_pat_decoder->p_building_pat)//hasbuilt it?
         {
             if (dvbpsi_CheckPAT(p_dvbpsi, p_section))
                 dvbpsi_ReInitPAT(p_pat_decoder, true);
         }
         else
         {
-            if(    (p_pat_decoder->b_current_valid)
+            if(    (p_pat_decoder->b_current_valid)//has the same table?
                 && (p_pat_decoder->current_pat.i_version == p_section->i_version)
                 && (p_pat_decoder->current_pat.b_current_next ==
                                                p_section->b_current_next))
